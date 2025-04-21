@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do forEach</title>
+    <link rel="stylesheet" href="styles/12-todo.css">
+</head>
+<body>
+    <p>Todo List Practice 1</p>
+    <div class="todo-input-grid">
+        <input type="text" placeholder="Todo name" class="todo-list" onkeypress="
+        if (event.key==='Enter'){
+            addTodo(); 
+        }
+    ">
+    
+        <input type="date" class="due-date">
+        <button class="add-todo-button" 
+        >Add</button>
+    </div>
+
+    <div class="display-list todo-grid"></div>
+    <script src="scripts/12-todo-foreach.js"></script>
+</body>
+</html>

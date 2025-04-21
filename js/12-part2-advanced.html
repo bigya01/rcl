@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced part 2</title>
+</head>
+<body>
+    <button class="js-btn" onclick="">Click</button>
+    <script> 
+        const buttonElement = document.querySelector('.js-btn');
+
+        eventListener = () => {
+            console.log('Button clicked!');
+        };
+        buttonElement.addEventListener('click', eventListener);
+
+        buttonElement.removeEventListener('click',eventListener);
+
+        buttonElement.addEventListener('click', () => {
+            console.log('Button clicked again!');
+        });
+
+    </script>
+</body>
+</html>
