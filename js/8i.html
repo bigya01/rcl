@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function comparePrice(product1,product2){
+            if(product1.price>product2.price){
+                return product1
+            }
+            else{
+                return product2;
+            }
+        }
+        const socksh = {
+            name: 'socks',
+            price: 1200,
+            rating: 4.5,
+        };
+        const socksl = {
+            name: 'socks',
+            price: 1090,
+            rating: 4.5,
+        };
+        console.log(comparePrice(socksh,socksl));
+        function check(socksh,socksl){if(socksh.price===socksl.price){
+            return true
+        }
+        else{return false}}
+        console.log(check(socksh,socksl));
+    </script>
+</body>
+</html>

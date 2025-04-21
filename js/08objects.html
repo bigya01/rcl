@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      console.log(localStorage.getItem('message'));
+      quality= 'not good';
+     
+      const product = {
+        name: "socks",
+        price: 1090,
+        ['delivery-time']: 10,
+        number: 2,
+        rating:{
+          stars: 4.5,
+          reviews: 1200,  //nested objects
+        },
+        fun : function function1(){
+          console.log("hello world");
+        },
+        quality //shorthand property
+      };
+
+
+
+      
+      // console.log(product);
+      // console.log(product.name);
+      // console.log(product.price);
+      // product.name = "cotton socks";   //add new value 
+      // product.location = "rnac";         //add new property 
+      // delete product.name;        //delete property 
+      // // new way to access value
+      // product['delivery-time'] = 12; 
+      // console.log(product['delivery-time']);
+      // console.log(product['delivery-time']-product.number);
+      // console.log(product.rating.stars);
+      // console.log(product.fun());
+      // console.log(typeof console);
+      // console.log(typeof console.log);
+      // console.log(JSON.stringify(product)); 
+      // console.log(JSON.parse(JSON.stringify(product))); 
+
+
+      localStorage.setItem('message','bindu');
+
+      const {name, price} = product; //destructuring
+      console.log(name, price);
+     
+      console.log(product);
+    </script>
+  </body>
+</html>
