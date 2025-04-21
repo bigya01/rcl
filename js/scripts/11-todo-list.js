@@ -1,24 +1,31 @@
-let todolist=[];
+const todolist= [];
 
 function addTodo(){
-    let todos= document.querySelector('.todo-list');
-    
-    let todo= todos.value;
-    todolist.push(todo);
-    console.log(todolist);
-    display();
+    let taskInputElement= document.querySelector('.todo-list');
+    let dateInputElement= document.querySelector('.due-date');
+    let task= taskInputElement.value;
+    let dueDate= dateInputElement.value;
+    todolist.push({
+        task,      //shorthand property
+        dueDate,
+    });
 
-    todos.value='';
+    display();
+    taskInputElement.value='';
+    dateInputElement.value='';
+
 }
 function display(){
     let displayList= document.querySelector('.display-list');
     displayList.innerHTML = '';
     for (let i=0; i<todolist.length; i++){
-        listt=`${todolist[i]}
-        <button onclick="
+        const {task,dueDate}= todolist[i] ;
+        const listt = `<div>${task}</div>
+        <div>${dueDate}</div>
+        <button class="delete-btn" onclick="
         todolist.splice(${i},1);
         display();
-        ">Delete </button><br>`;
+        ">Delete</button>`;
         
         displayList.innerHTML+=listt;
 
