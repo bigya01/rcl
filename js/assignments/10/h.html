@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping With CSS</title>
+    <style>
+        .subscribe-btn{
+            background-color: black;
+            border-radius: 20px;
+            border: none;
+            padding: 12px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+        .subscribed-btn{
+            background-color: rgb(240, 240, 240);
+            color:black;
+        }
+        body{
+            font-family: Arial;;
+        }
+        .calculate-btn{
+            font-size: 15px;
+
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 13px 15px;
+            cursor: pointer;
+        }
+        .orderValue{
+            font-size: 15px;
+            border: 0.5px solid black;
+            padding: 12px;
+        }
+        .text-rock{
+            margin-top: 55px;
+        }
+        .error{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40=+$10 shipping</p>
+    <p>Orders over $40=FREE shipping</p>
+    <input placeholder="Cost of order" class="orderValue" onkeydown="
+      if (event.key === 'Enter') {
+        ShippngCost();
+      }">
+    <button class="calculate-btn" onclick="
+      ShippngCost();
+    ">Calculate</button>
+    <p class="totalValue"></p>
+
+
+    <script>
+      function ShippngCost(){
+        inputValue= parseInt(document.querySelector('.orderValue').value);
+if (inputValue<0){
+    valuee= document.querySelector('.totalValue');
+        valuee.classList.add('error');
+        valuee.innerHTML='Error: cost cannot be less than $0';
+}
+else{
+    if (inputValue < 40 && inputValue > 0){ 
+        inputValue+=10;
+        console.log(inputValue);
+      } 
+        document.querySelector('.totalValue').innerHTML= '$'+inputValue;
+}
+     
+      
+     
+      }
+    </script>
+</body>
+</html>
