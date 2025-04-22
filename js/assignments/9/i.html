@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart quality</title>
+  </head>
+  <body>
+    <button
+      onclick="
+        showcartQuantity(cartQuantity);
+        "
+    >
+      Show Quantity
+    </button>
+    <button
+      onclick="
+    cartQuantity += 1;
+    showcartQuantity(cartQuantity);
+    "
+    >
+      Add to cart
+    </button>
+    <button
+      onclick="
+    cartQuantity+=2;
+    showcartQuantity(cartQuantity);
+
+
+    ">
+      +2 
+    </button>
+    <button
+      onclick="
+    cartQuantity+=3;
+    showcartQuantity(cartQuantity);
+    "
+    >
+      +3
+    </button>
+    <button
+      onclick="
+      cartQuantity += 4;
+      showcartQuantity(cartQuantity);
+      ">
+      +4
+    </button>
+    <button
+      onclick="
+        cartQuantity= -1;
+        showcartQuantity(cartQuantity);"
+    >
+      Remove from the cart
+    </button>
+
+    <p class="btn"></p>
+
+    <script>
+            let cartQuantity=parseInt(localStorage.getItem('cartQuantity')) || 0;
+
+              function showcartQuantity(cartQuantity) {
+                document.querySelector('.btn').innerHTML=`Cart quantity: ${cartQuantity}`
+                localStorage.setItem('cartQuantity', cartQuantity);
+              }
+
+            showcartQuantity(cartQuantity);
+    </script>
+  </body>
+</html>
