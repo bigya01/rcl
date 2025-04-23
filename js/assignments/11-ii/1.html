@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11 ii</title>
+  </head>
+  <body>
+    <script>
+          arr1=["hello","search","world","bindu","search"]
+          // arr1.forEach((value,index)=>{
+          //     if(value==="search"){
+          //         res=index;
+          //     }
+          //     else{
+          //         res=-1;
+          //     }
+          // }
+          // )
+          // console.log(res);
+
+      //    for(let i=0;i<arr1.length;i++){
+      //         if(arr1[i]==="search"){
+      //             console.log(i);
+      //             break;
+      //         }
+      //     }
+
+
+    // function findIndex(arr,word){
+    //          for(let i=0;i<arr1.length;i++){
+    //           if(arr1[i]===word){
+    //              res=i;
+    //               break;
+    //           }
+    //           else{
+    //                 res=-1;
+    //           }
+    //       }
+    //         console.log(res);
+    //       }
+    // findIndex(arr1,"qguick");
+      
+    // function removeEgg(foods){
+    //     newFoods=[];
+    //     for(let i=0;i<foods.length;i++){
+    //         if(foods[i]==="egg"){
+    //             continue;
+    //         }
+    //         else{
+    //             newFoods.push(foods[i]);
+    //         }
+    //     }
+    //     console.log(newFoods);
+    // }
+
+    // removeEgg(["egg","milk","egg","bread","egg"]);
+        
+    // function remove2Egg(foods){
+    //     newFoods=[];
+    //     count=0;
+    //     for(let i=0;i<foods.length;i++){
+    //         if(foods[i]==="egg" && count<2){
+    //             count+=1;
+    //             continue;
+                     
+    //         }
+    //         else{
+    //             newFoods.push(foods[i]);
+    //         }
+    //     }
+    //     console.log(newFoods);
+    // }
+
+    // remove2Egg(["egg","egg","milk","egg","bread","egg"]);
+
+
+          function reverse2Egg(foods){
+            newFoods=[];
+            count=0;
+
+            for(let i=0;i<foods.length;i++){
+                if(foods[i]==="egg" && count<2){
+                    count+=1;
+                    continue;
+                         
+                }
+                else{
+                    newFoods.push(foods[i]);
+                }
+            }
+            console.log(newFoods);
+          }
+              reverse2Egg(["egg","egg","milk","egg","bread","egg"]);
+
+    
+    
+    </script>
+  </body>
+</html>
