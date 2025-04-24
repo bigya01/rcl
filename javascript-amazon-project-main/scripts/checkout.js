@@ -8,7 +8,7 @@ let cartSummaryHTML = "";
 cart.forEach((cartItem) => {
   const productId = cartItem.productId;
   let matchingProduct;
-  products.forEach((product) => {      //cart ma vako ra product ko id same xa ki nai
+  products.forEach((product) => {     
     if (product.id === productId) {
       matchingProduct = product;
     }
@@ -83,10 +83,10 @@ function deliveryOptionsHTML(matchingProduct,cartItem) {
     const deliveryDate = today.add(option.deliveryDays, "days").format("dddd, MMMM D");
     const priceString = option.priceCents ===0 
     ? 'FREE' : `$${formatCurrency(option.priceCents)}-`;
-    console.log(option.id)
+    console.log("option id",option.id)
     console.log(cartItem.deliveryOptionId)
 
-    const isChecked = option.id === cartItem.deliveryOptionId; ;
+    const isChecked = option.id === cartItem.deliveryOptionId; 
 
     html+=
     ` <div class="delivery-option">
