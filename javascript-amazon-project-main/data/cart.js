@@ -5,7 +5,6 @@ function saveToStorage(){
 }
 
 export function addToCart(productId) {
-
     let matchingItem;
       cart.forEach((cartItem) => {
         if (productId === cartItem.productId) {
@@ -18,6 +17,7 @@ export function addToCart(productId) {
         cart.push({
           productId: productId,
           quantity: 1,
+          deliveryOptionId: "6 ",
         });
       }
       saveToStorage();
