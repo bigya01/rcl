@@ -73,7 +73,7 @@ class Clothing extends Product{
 
 }
 
-console.log(tshirt);
+const date = new Date();
 
 export const products = [
   {
