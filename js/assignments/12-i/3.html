@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-3</title>
+</head>
+<body>
+    <button class="btn-change">Add to Cart</button>
+    <p class="text"></p>
+    <script>
+        btnElement = document.querySelector(".btn-change");
+        btnElement.addEventListener("click",()=>{
+            paraElement=document.querySelector(".text");
+            paraElement.innerText="Added to Cart";
+            setTimeout(() => {
+                paraElement.innerText="";
+            }, 2000);
+        })
+
+    </script>
+</body>
+</html>

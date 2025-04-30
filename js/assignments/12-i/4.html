@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12-4</title>
+  </head>
+  <body>
+    <button class="btn-change">Add to Cart</button>
+    <p class="text"></p>
+    <script>
+      btnElement = document.querySelector(".btn-change");
+      let timeoutId;
+      btnElement.addEventListener("click", () => {
+        clearTimeout(timeoutId);
+        paraElement = document.querySelector(".text");
+        paraElement.innerText = "Added to Cart";
+        timeoutId= setTimeout(() => {
+          paraElement.innerText = "";
+        }, 2000);
+      });
+
+     
+
+    </script>
+  </body>
+</html>

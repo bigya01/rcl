@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn-change">Start</button>
+    <script>
+        const buttonText= document.querySelector(".btn-change");
+        buttonText.addEventListener('click',()=>{
+            setTimeout(() => {
+            buttonText.innerText="Finished";
+        }, 1000);
+        buttonText.innerText="Loading...";
+        });
+       
+
+    </script>
+</body>
+</html>
