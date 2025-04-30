@@ -23,12 +23,20 @@ import { loadCart } from "../data/cart.js";
 
 //same thing using async await
 async function loadPage() {
-  await loadProductsFetch();
-  const value = await new Promise((resolve) => {
-    loadCart(() => {
-      resolve('value 3');
+  try{
+    // throw 'error'; 
+    await loadProductsFetch();
+    const value = await new Promise((resolve,reject) => {
+      loadCart(() => {
+        // reject('error');
+        resolve('value 3');
+      });
     });
-  });
+  }
+  catch(err){
+    console.log('unexpected error');
+  }
+  
   renderOrderSummary();
   renderPaymentSummary();
 }
