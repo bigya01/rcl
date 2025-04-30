@@ -75,23 +75,42 @@
     // remove2Egg(["egg","egg","milk","egg","bread","egg"]);
 
 
-          function reverse2Egg(foods){
-            newFoods=[];
-            count=0;
+          // function reverse2Egg(foods){
+          // foods.reverse();
+          //   newFoods=[];
+          //   count=0;
 
-            for(let i=0;i<foods.length;i++){
-                if(foods[i]==="egg" && count<2){
-                    count+=1;
-                    continue;
+          //   for(let i=0;i<foods.length;i++){
+          //       if(foods[i]==="egg" && count<2){
+          //           count+=1;
+          //           continue;
                          
-                }
-                else{
-                    newFoods.push(foods[i]);
-                }
+          //       }
+          //       else{
+          //           newFoods.push(foods[i]);
+          //       }
+          //   }
+          //   console.log(newFoods);
+          // }
+          //     reverse2Egg(["egg","egg","milk","egg","bread","egg"]);
+
+
+          for (let i =1;i<=20;i++){
+            if(i%3===0 && i%5===0){
+              console.log("fizzbuzz");
             }
-            console.log(newFoods);
+            else if(i%3===0){
+              console.log("fizz");
+            }
+            else if(i%5===0){
+              console.log("buzz");
+            }
+            else{
+              console.log(i);
+            }
           }
-              reverse2Egg(["egg","egg","milk","egg","bread","egg"]);
+
+
 
     
     

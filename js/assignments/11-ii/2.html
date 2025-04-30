@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11-2-2</title>
+  </head>
+  <body>
+    <script>
+      arr1 = ["red","green","green" , "red"];
+      function findIndex(arr1, word) {
+        for (let i = 0; i < arr1.length; i++) {
+          if (word.includes(arr1[i])) {
+            continue;
+          } else {
+            word.push(arr1[i]);
+          }
+        }
+        console.log(word);
+      }
+      findIndex(arr1, []);
+    </script>
+  </body>
+</html>
