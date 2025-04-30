@@ -1,23 +1,23 @@
 import { formatCurrency } from "../scripts/utils/money.js";
 
-export function getProduct(productId){
+export function getProduct(productId) {
   let matchingProduct;
-  products.forEach((product) => {     
+  products.forEach((product) => {
     if (product.id === productId) {
       matchingProduct = product;
     }
   });
-  return matchingProduct
+  return matchingProduct;
 }
-                                            
+
 class Product {
-  id; 
+  id;
   image;
   name;
   rating;
   priceCents;
 
-  constructor(productDetails){
+  constructor(productDetails) {
     this.id = productDetails.id;
     this.image = productDetails.image;
     this.name = productDetails.name;
@@ -25,20 +25,18 @@ class Product {
     this.priceCents = productDetails.priceCents;
   }
 
-  getStarsUrl(){
-      return `images/ratings/rating-${this.rating.stars * 10}.png` 
+  getStarsUrl() {
+    return `images/ratings/rating-${this.rating.stars * 10}.png`;
   }
-  getPrice(){
+  getPrice() {
     return `
     $${formatCurrency(this.priceCents)}
-    `
+    `;
   }
 
-  extraInfoHTML(){
-    return ""
+  extraInfoHTML() {
+    return "";
   }
-
-
 }
 const product1 = new Product({
   id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -46,62 +44,63 @@ const product1 = new Product({
   name: "Black and Gray Athletic Cotton Socks - 6 Pairs",
   rating: {
     stars: 4.5,
-    count: 87
+    count: 87,
   },
   priceCents: 1090,
-  keywords: [
-    "socks",
-    "sports",
-    "apparel"
-  ]
-},);
- 
+  keywords: ["socks", "sports", "apparel"],
+});
 
-
-class Clothing extends Product{
+class Clothing extends Product {
   sizeChartLink;
-  constructor(productDetails){
+  constructor(productDetails) {
     super(productDetails);
     this.sizeChartLink = productDetails.sizeChartLink;
   }
 
-  extraInfoHTML(){
+  extraInfoHTML() {
     return `
     <a href= "${this.sizeChartLink}" target= "_blank"
-    >Size Chart</a>`
+    >Size Chart</a>`;
   }
-
 }
 const date = new Date();
 
+export let products = [];
 
-export let products =[];
+export function loadProductsFetch() {
+  const promise = fetch("https://supersimplebackend.dev/products")
+    .then((response) => {
+      return response.json();
+    })                          
+    .then((productsData) => {
+      products = productsData.map((productDetails) => {
+        if (productDetails.type === "clothing") {
+          return new Clothing(productDetails);
+        }
+        return new Product(productDetails);
+      });
+    });
+  return promise;
+}
 
 
-
-export function loadProducts(fun){
+export function loadProducts(fun) {
   const xhr = new XMLHttpRequest();
 
-  xhr.addEventListener('load', () => {
-    products=JSON.parse(xhr.response).map((productDetails) => {
+  xhr.addEventListener("load", () => {
+    products = JSON.parse(xhr.response).map((productDetails) => {
       if (productDetails.type === "clothing") {
-        return new Clothing(productDetails)
+        return new Clothing(productDetails);
       }
-      return new Product(productDetails)
+      return new Product(productDetails);
     });
     console.log("load products");
     fun();
+  });
 
-  })
-
-
-
-  xhr.open('GET', 'https://supersimplebackend.dev/products');
+  xhr.open("GET", "https://supersimplebackend.dev/products");
   xhr.send();
 }
-
-loadProducts()
-
 
 
 /*
