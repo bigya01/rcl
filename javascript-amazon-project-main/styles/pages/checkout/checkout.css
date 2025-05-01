@@ -13,6 +13,35 @@
   margin-left: auto;
   margin-right: auto;
 }
+.quantity-input
+{
+  width: 30px;
+  display: none;
+}
+.error-message {
+  color: rgb(177, 39, 4);
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 5px;
+}
+.save-quantity-link{
+  display: none;
+}
+.is-editing-quantity .quantity-input {
+  display: initial;
+}
+
+.is-editing-quantity .save-quantity-link {
+  display: inline;
+}
+
+.is-editing-quantity .js-update-link {
+  display: none;
+}
+.is-editing-quantity .quantity-label{
+  display: none;
+}
+
 
 .page-title {
   font-weight: 700;

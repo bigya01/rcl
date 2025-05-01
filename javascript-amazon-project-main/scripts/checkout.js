@@ -1,7 +1,7 @@
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 import { loadProducts, loadProductsFetch } from "../data/products.js";
-import { loadCart,cart,calculateCartQuantity } from "../data/cart.js";
+import { loadCart,calculateCartQuantity } from "../data/cart.js";
 // import '../data/cart-class.js'
 // import '../data/backend-practice.js'
 
