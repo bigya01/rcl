@@ -26,7 +26,6 @@ export function addToCart(productId,selectorQuantity) {
           deliveryOptionId: "1",
         });
       }
-      console.log(cart);
       saveToStorage(cart);
   }
 

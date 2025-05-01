@@ -65,13 +65,19 @@ function renderProductsGrid() {
   updateCartQuantity();
  
 
-  function updateCartQuantity() {
+function updateCartQuantity() {
     let cartQuantity = 0;
+    let cartvalue= document.querySelector(".js-cart-quantity")
     cart.forEach((cartItem) => {
       cartQuantity += cartItem.quantity;
     });
-    document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
+    cartQuantity ===0 ? cartvalue.innerHTML= "" : cartvalue.innerHTML=cartQuantity;
+    
   }
+
+
+
+
   let timeOutId;
   document.querySelectorAll(".js-add-to-cart").forEach((button) => {
     button.addEventListener("click", () => {
