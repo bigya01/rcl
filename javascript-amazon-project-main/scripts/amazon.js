@@ -48,7 +48,7 @@ function renderProductsGrid() {
 
           <div class="product-spacer"></div>
 
-          <div class="added-to-cart">
+          <div class="added-to-cart added-to-cart-${product.id}">
             <img src="images/icons/checkmark.png">
             Added
           </div>
@@ -72,16 +72,30 @@ function renderProductsGrid() {
     });
     document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
   }
-
+  let timeOutId;
   document.querySelectorAll(".js-add-to-cart").forEach((button) => {
     button.addEventListener("click", () => {
-    
+      clearTimeout(timeOutId);
+     
       const productId = button.dataset.productId;
       let selector = document.querySelector(
         `.js-quantity-selector-${productId}`
       );
       let selectorQuantity=Number(selector.value
       );
+
+      const addedToCart = document.querySelector(
+        `.added-to-cart-${productId}`
+      );
+      addedToCart.classList.add("added-to-cart-active");
+     
+      
+      timeOutId=setTimeout(() => {
+       
+        addedToCart.classList.remove("added-to-cart-active");
+      }, 2000);
+    
+
       addToCart(productId,selectorQuantity);
       updateCartQuantity();
     });
