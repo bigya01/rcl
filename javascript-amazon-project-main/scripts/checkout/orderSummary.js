@@ -194,5 +194,6 @@ function saveQuantity(saveLink){
         }
         updateQuantity(saveProductId, quantity);
         updateCartQuantity();
+        renderPaymentSummary();
 
 }
